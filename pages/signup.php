@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    error_reporting(0);
+    if($_SESSION["studentid"] != ""){
+        header("location: ./pages/chat.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +27,7 @@
     </div>
 
     <header class="bg-white py-4 grid grid-cols-header drop-shadow-lg items-center px-[5%] md:px-[10%] fixed top-0 w-full">
-        <h1>Chat</h1>
+        <h1>Logo</h1>
         <div class="flex gap-4">
             <a href="../index.php" class="p-3 rounded-lg hover:opacity-80">Sign In</a>
             <a href="./signup.php" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
@@ -47,7 +54,7 @@
             </div>
             <div class="flex justify-center">
                 <button type="submit" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
-                ring-blue-300 focus:outline-none focus:ring max-w-sm w-full" id="signup">Sign Up</button>
+                ring-blue-300 focus:outline-none focus:ring w-[100px]" id="signup">Sign Up</button>
             </div>
         </form>
     </div>

@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    error_reporting(0);
+    if($_SESSION["studentid"] != ""){
+        header("location: ./pages/chat.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +27,7 @@
     </div>
 
     <header class="bg-white py-4 grid grid-cols-header drop-shadow-lg items-center px-[5%] md:px-[10%] fixed top-0 w-full">
-        <h1>Chat</h1>
+        <h1>Logo</h1>
         <div class="flex gap-4">
             <a href="./index.php" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
             ring-blue-300 focus:outline-none focus:ring">Sign In</a>
@@ -30,11 +37,11 @@
     <!-- sign in form -->
     <div class="shadow-2xl bg-white p-5 flex flex-col rounded-lg gap-6 max-w-[500px] w-full mt-[100px] md:mx-[10%] mx-[5%]">
         <h1 class="text-[25px] font-bold">Sign in your account</h1>
-        <form class="flex flex-col gap-5" id="signinForm">
-            <input class="p-3 outline-none rounded-lg bg-blue-50" type="number" name="studentno" id="studentno" placeholder="Student Number">
-            <input class="p-3 outline-none rounded-lg bg-blue-50" type="password" name="password" id="password" placeholder="Password">
+        <form class="flex flex-col gap-5 justify-center items-center" id="signinForm">
+            <input class="p-3 outline-none rounded-lg bg-blue-50 w-full" type="number" name="studentno" id="studentno" placeholder="Student Number">
+            <input class="p-3 outline-none rounded-lg bg-blue-50 w-full" type="password" name="password" id="password" placeholder="Password">
             <button type="submit" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
-            ring-blue-300 focus:outline-none focus:ring" id="signin">Sign In</button>
+            ring-blue-300 focus:outline-none focus:ring w-[100px]" id="signin">Sign In</button>
         </form>
     </div>
 
@@ -51,7 +58,7 @@
                     type: 'POST',
                     data: formData,
                     success: function(response) {
-                        
+                        window.location.href = './pages/chat.php';
                     },
                     error: function(xhr, status, error) {
                         $("#modalResponse").show();
