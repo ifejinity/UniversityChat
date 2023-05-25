@@ -12,7 +12,7 @@
 
     <!-- modal response -->
     <div id="modalResponse" class="fixed bg-black/30 w-full h-screen z-[10] justify-center items-center flex">
-        <div class="w-[500px] h-fit bg-white rounded-lg p-5 flex flex-col justify-center items-center gap-5">
+        <div class="w-[500px] h-fit bg-white rounded-lg p-5 flex flex-col justify-center items-center gap-5 md:mx-[10%] mx-[5%]">
             <div id="response"></div>
             <button type="submit" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
                 ring-blue-300 focus:outline-none focus:ring w-fit" id="closeModal">Okay</button>

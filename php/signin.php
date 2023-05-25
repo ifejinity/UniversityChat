@@ -9,6 +9,7 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0){
+        $_SESSION["studentid"] = $studentno;
         http_response_code(200);
     }
     else{
