@@ -13,6 +13,9 @@
     while($row = $result->fetch_assoc()){
         $fullname = $row["fname"] . " " . $row["mname"] . " " . $row["lname"];
     }
+
+    $selectMessages = "SELECT * FROM (SELECT * FROM messages ORDER BY messageid DESC LIMIT 10) AS subquery ORDER BY messageid ASC";
+    $messages = $conn->query($selectMessages);
 ?>
 
 <!DOCTYPE html>
@@ -50,10 +53,63 @@
         </div>
     </header>
 
-    <h1><?php echo $fullname ?></h1>
+    <div class="bg-white w-full h-screen grid mx-[5%] md:mx-[10%] items-center max-w-[1440px] gap-5" id="holder">
+        <div class="rounded-lg h-full w-full p-5 flex flex-col gap-5 pt-[100px] pb-[200px] overflow-y-scroll" id="conversation">
+            <?php
+            if($messages->num_rows > 0){
+                while($rowmessages = $messages->fetch_assoc()){
+                    if($studentid === $rowmessages["studentid"]){
+            ?>
+                        <div class="flex flex-col w-full" id="messageItem">
+                            <h1 class="self-end text-[.9rem] text-gray-400"><?php echo $rowmessages["fullname"];?></h1>
+                            <div class="self-end w-fit bg-blue-500 p-3 text-white rounded-full">
+                                <h1><?php echo $rowmessages["message"] ?></h1>
+                            </div>
+                            <h1 class="self-end text-[.7rem] text-gray-400"><?php echo $rowmessages["datetime"];?></h1>
+                        </div>
+            <?php
+                    }
+                    else{
+            ?>
+                        <div class="flex flex-col w-full" id="messageItem">
+                            <h1 class="self-start text-[.9rem] text-gray-400"><?php echo $rowmessages["fullname"];?></h1>
+                            <div class="self-start w-fit bg-gray-300 p-3 rounded-full">
+                                <h1><?php echo $rowmessages["message"]?></h1>
+                            </div>
+                            <h1 class="self-start text-[.7rem] text-gray-400"><?php echo $rowmessages["datetime"];?></h1>
+                        </div>
+            <?php
+                    }
+                }
+            }
+            else
+            {
+            ?>
+                <h1 class="text-[30px] font-bold text-blue-500 text-center">No messages</h1>
+            <?php
+            }
+            ?>
+        </div>
+    </div>
+
+    <div class="fixed w-full grid bottom-0 bg-white p-5 px-[5%] md:px-[10%] shadow-xl">
+        <form id="myMessage" class="md:grid-cols-header grid-cols-1 gap-5 justify-center items-center grid">
+            <input type="hidden" name="myLoaded2" value="10" id="limitdata2">
+            <textarea class="outline-none bg-gray-200 p-5 rounded-lg resize-none"
+            name="message" id="message" cols="30" rows="2" placeholder="Write a message"></textarea>
+            <input type="hidden" name="studentid" value="<?php echo $studentid?>">
+            <input type="hidden" name="fullname" value="<?php echo $fullname?>">
+            <button type="submit" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
+            ring-blue-300 focus:outline-none focus:ring w-[100px]" id="send">Send</button>
+        </form>
+    </div>
+    <form id="limit">
+        <input type="hidden" name="myLoaded" value="10" id="limitdata">
+    </form>
 
     <script>
         $("#modalSignout").hide();
+
         $("#signout").click(()=>{
             $("#modalSignout").show();
         })
@@ -62,7 +118,23 @@
             $("#modalSignout").hide();
         })
 
+        // Show more
+        let myLimitval = parseInt($("#limitdata").val());
+        let myLimitval2 = parseInt($("#limitdata2").val());
+        $("#conversation").scroll(function() {
+            
+            if ($(this).scrollTop() === 0) {
+                let sum = myLimitval += 10;
+
+                $("#limitdata").val(sum);
+                $("#limitdata2").val(sum);
+
+                console.log(sum);
+            }
+        });
+
         $(document).ready(()=> {   
+            // sign out
             $("#proceed").click((e)=>{
                 e.preventDefault(); // Prevent the form from submitting normally
 
@@ -72,6 +144,43 @@
                         window.location.href = '../index.php';
                     }
                 });
+            });
+
+            setInterval(()=> {
+                var limit = $("#limit").serialize();
+                $.ajax({
+                    url: '../php/reload.php',
+                    type: 'POST',
+                    data: limit,
+                    success: function(response){
+                        $("#conversation").html(response);
+                    }
+                });
+            }, 1000);
+
+            // scroll bottom
+            var scrollableElement = $("#conversation");
+            scrollableElement.scrollTop(scrollableElement[0].scrollHeight);
+
+            // send message
+            $("#send").click((e)=>{
+                if($("#message").val() != ""){
+                    e.preventDefault();
+                    var formData = $("#myMessage").serialize();
+                    $.ajax({
+                        url: '../php/chat.php',
+                        type: 'POST',
+                        data: formData,
+                        success: function(response) {
+                            $("#conversation").html(response);
+                            $("#message").val("");
+                            scrollableElement.scrollTop(scrollableElement[0].scrollHeight);
+                        },
+                        error: function(xhr, status, error) {
+                            alert(error);
+                        }
+                    });
+                }
             });
         });
     </script>
