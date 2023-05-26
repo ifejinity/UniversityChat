@@ -10,7 +10,7 @@ $(document).ready(()=> {
             type: 'POST',
             data: formData,
             success: function(response) {
-                window.location.href = './pages/chat.php';
+                window.location.href = './pages/home.php';
             },
             error: function(xhr, status, error) {
                 $("#modalResponse").show();

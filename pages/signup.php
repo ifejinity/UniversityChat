@@ -2,7 +2,7 @@
     session_start();
     error_reporting(0);
     if($_SESSION["studentid"] != ""){
-        header("location: ./pages/chat.php");
+        header("location: ./pages/home.php");
     }
 ?>
 <!DOCTYPE html>
