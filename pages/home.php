@@ -92,15 +92,15 @@
         </div>
     </div>
 
-    <div class="fixed w-full grid bottom-0 bg-white p-5 px-[5%] md:px-[10%] shadow-xl">
-        <form id="myMessage" class="md:grid-cols-header grid-cols-1 gap-5 justify-center items-center grid">
+    <div class="fixed w-full grid bottom-0 bg-white sm:p-5 p-3 px-[5%] md:px-[10%] shadow-xl">
+        <form id="myMessage" class="grid-cols-header gap-2 sm:gap-5 justify-center items-center grid">
             <input type="hidden" name="myLoaded2" value="10" id="limitdata2">
             <textarea class="outline-none bg-gray-200 p-5 rounded-lg resize-none"
-            name="message" id="message" cols="30" rows="2" placeholder="Write a message"></textarea>
+            name="message" id="message" cols="1" rows="2" placeholder="Write a message"></textarea>
             <input type="hidden" name="studentid" value="<?php echo $studentid?>">
             <input type="hidden" name="fullname" value="<?php echo $fullname?>">
             <button type="submit" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
-            ring-blue-300 focus:outline-none focus:ring w-[100px]" id="send">Send</button>
+            ring-blue-300 focus:outline-none focus:ring w-fit" id="send">Send</button>
         </form>
     </div>
     <form id="limit">
