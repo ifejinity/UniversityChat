@@ -107,6 +107,6 @@
         <input type="hidden" name="myLoaded" value="10" id="limitdata">
     </form>
 
-    <script src="../js/chat.js"></script>
+    <script src="../js/home.js"></script>
 </body>
 </html>

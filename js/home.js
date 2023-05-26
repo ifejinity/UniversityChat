@@ -58,7 +58,7 @@ $(document).ready(()=> {
             e.preventDefault();
             var formData = $("#myMessage").serialize();
             $.ajax({
-                url: '../php/chat.php',
+                url: '../php/home.php',
                 type: 'POST',
                 data: formData,
                 success: function(response) {
