@@ -36,17 +36,32 @@ $(document).ready(()=> {
         });
     });
 
-    setInterval(()=> {
-        var limit = $("#limit").serialize();
+    // Short polling to continuously check for new messages
+    // setInterval(()=> {
+    //     var limit = $("#limit").serialize();
+    //     $.ajax({
+    //         url: '../php/reload.php',
+    //         type: 'POST',
+    //         data: limit,
+    //         success: function(response){
+    //             $("#conversation").html(response);
+    //         }
+    //     });
+    // }, 1000);
+
+    // Long polling to continuously check for new messages
+    loadMessages();
+    function loadMessages() {
         $.ajax({
             url: '../php/reload.php',
             type: 'POST',
-            data: limit,
-            success: function(response){
-                $("#conversation").html(response);
+            data: {myLoaded: $('#limitdata').val()},
+            success: function (response) {
+                $('#conversation').html(response);
+                setTimeout(loadMessages, 1000); // Delay before sending the next request
             }
         });
-    }, 1000);
+    }
 
     // scroll bottom
     var scrollableElement = $("#conversation");
