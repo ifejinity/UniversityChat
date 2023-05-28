@@ -1,5 +1,6 @@
 <?php
     include '../conn.php';
+
     $limit = $_POST["myLoaded2"];
     $studentid = $_POST["studentid"];
     $fullname = $_POST["fullname"];
@@ -41,8 +42,6 @@
                 ";
             }
         }
-    } else {
-        http_response_code(500);
     }
     $conn->close();
 ?>

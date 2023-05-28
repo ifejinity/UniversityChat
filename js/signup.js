@@ -1,7 +1,15 @@
-$("#modalResponse").hide();
+$("#modalResponseSuccess").hide();
+$("#modalResponseFailed").hide();
+$("#loader").hide();
+
+$("#consent").click(function(){
+    this.checked ? $("#signup").prop('disabled', false) : $("#signup").prop('disabled', true);
+});
 
 $(document).ready(function() {
     $('#signupForm').submit(function(event) {
+    $("#loader").show();
+
         event.preventDefault(); // Prevent the form from submitting normally
 
         var formData = $(this).serialize();
@@ -11,22 +19,17 @@ $(document).ready(function() {
             type: 'POST',
             data: formData,
             success: function(response) {
-                $("#modalResponse").show();
-                $("#response").html(`
-                    <h1 class="font-bold text-[25px] text-center">Successfully created Account!</h1>
-                `);
-                        // Handle the response here
+                $("#loader").hide();
+                $("#modalResponseSuccess").show();
             },
             error: function(xhr, status, error) {
-                $("#modalResponse").show();
-                $("#response").html(`
-                    <h1 class="font-bold text-[25px] text-center">Failed to create an Account!</h1>
-                `);
+                $("#loader").hide();
+                $("#modalResponseFailed").show();
             }
         });
     });
 });
 
-$("#closeModal").click(()=>{
-    $("#modalResponse").hide();
+$("#closeModalFailed").click(()=>{
+    $("#modalResponseFailed").hide();
 });

@@ -1,4 +1,5 @@
 $("#modalSignout").hide();
+$("#loader").hide();
 
 $("#signout").click(()=>{
     $("#modalSignout").show();
@@ -14,6 +15,8 @@ let myLimitval2 = parseInt($("#limitdata2").val());
 $("#conversation").scroll(function() {
     
     if ($(this).scrollTop() === 0) {
+        $("#loader").show();
+
         let sum = myLimitval += 10;
 
         $("#limitdata").val(sum);
@@ -36,19 +39,6 @@ $(document).ready(()=> {
         });
     });
 
-    // Short polling to continuously check for new messages
-    // setInterval(()=> {
-    //     var limit = $("#limit").serialize();
-    //     $.ajax({
-    //         url: '../php/reload.php',
-    //         type: 'POST',
-    //         data: limit,
-    //         success: function(response){
-    //             $("#conversation").html(response);
-    //         }
-    //     });
-    // }, 1000);
-
     // Long polling to continuously check for new messages
     loadMessages();
     function loadMessages() {
@@ -57,6 +47,7 @@ $(document).ready(()=> {
             type: 'POST',
             data: {myLoaded: $('#limitdata').val()},
             success: function (response) {
+                $("#loader").hide();
                 $('#conversation').html(response);
                 setTimeout(loadMessages, 1000); // Delay before sending the next request
             }

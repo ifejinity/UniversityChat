@@ -6,6 +6,9 @@ module.exports = {
       gridTemplateColumns: {
         'header' : '1fr auto',
       },
+      fontFamily:{
+        'outfit': ['Outfit', 'sans-serif'],
+      },
     },
   },
   plugins: [],

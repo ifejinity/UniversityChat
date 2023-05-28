@@ -14,9 +14,12 @@
     <link href="./dist/output.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="shortcut icon" href="./src/resources/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>University Chat | Sign in</title>
 </head>
-<body class="bg-blue-50 h-screen w-full overflow-x-hidden justify-center flex items-center">
+<body class="bg-blue-50 h-screen w-full overflow-x-hidden justify-center flex items-center font-outfit">
 
     <!-- modal response -->
     <div id="modalResponse" class="fixed bg-black/30 w-full h-screen z-[10] justify-center items-center flex">
