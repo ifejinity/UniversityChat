@@ -1,14 +1,10 @@
-$("#modalResponseSuccess").hide();
-$("#modalResponseFailed").hide();
-$("#loader").hide();
-
 $("#consent").click(function(){
     this.checked ? $("#signup").prop('disabled', false) : $("#signup").prop('disabled', true);
 });
 
 $(document).ready(function() {
     $('#signupForm').submit(function(event) {
-    $("#loader").show();
+    $("#loader").css('display', 'flex');
 
         event.preventDefault(); // Prevent the form from submitting normally
 
@@ -20,11 +16,11 @@ $(document).ready(function() {
             data: formData,
             success: function(response) {
                 $("#loader").hide();
-                $("#modalResponseSuccess").show();
+                $("#modalResponseSuccess").css('display', 'flex');
             },
             error: function(xhr, status, error) {
                 $("#loader").hide();
-                $("#modalResponseFailed").show();
+                $("#modalResponseFailed").css('display', 'flex');
             }
         });
     });

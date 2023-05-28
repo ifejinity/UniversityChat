@@ -1,8 +1,5 @@
-$("#modalSignout").hide();
-$("#loader").hide();
-
 $("#signout").click(()=>{
-    $("#modalSignout").show();
+    $("#modalSignout").css('display', 'flex');
 })
 
 $("#cancel").click(()=>{
@@ -15,7 +12,7 @@ let myLimitval2 = parseInt($("#limitdata2").val());
 $("#conversation").scroll(function() {
     
     if ($(this).scrollTop() === 0) {
-        $("#loader").show();
+        $("#loader").css('display', 'flex');
 
         let sum = myLimitval += 10;
 

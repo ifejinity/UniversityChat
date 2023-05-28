@@ -26,6 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../dist/output.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="shortcut icon" href="../src/resources/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -33,7 +34,7 @@
 </head>
 <body class="bg-blue-50 h-screen w-full overflow-x-hidden justify-center flex items-center font-outfit">
      <!-- loader -->
-     <div class="fixed bg-white/80 w-full h-screen flex justify-center items-center z-[1] flex-col gap-20" id="loader">
+     <div class="fixed bg-white/80 w-full h-screen hidden justify-center items-center z-[1] flex-col gap-20" id="loader">
         <div class="relative">
             <div class="loader">
                 <div class="dot"></div>
@@ -60,7 +61,7 @@
     </div>
 
     <!-- modal sign out -->
-    <div id="modalSignout" class="fixed bg-black/30 w-full h-screen z-[10] justify-center items-center flex">
+    <div id="modalSignout" class="fixed bg-black/30 w-full h-screen z-[10] justify-center items-center hidden">
         <div class="w-fit h-fit bg-white rounded-lg p-5 flex flex-col justify-center items-center gap-5 md:mx-[10%] mx-[5%]">
             <div>
                 <h1 class="text-[25px] font-bold">Are you sure?</h1>

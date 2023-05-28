@@ -1,5 +1,3 @@
-$("#modalResponse").hide();
-
 $(document).ready(()=> {
     $("#signin").click((event)=>{
         event.preventDefault(); // Prevent the form from submitting normally
@@ -13,7 +11,7 @@ $(document).ready(()=> {
                 window.location.href = './pages/home.php';
             },
             error: function(xhr, status, error) {
-                $("#modalResponse").show();
+                $("#modalResponse").css('display', 'flex');
                 $("#response").html(`
                     <h1 class="font-bold text-[25px] text-center">Sign in Failed!</h1>
                 `);

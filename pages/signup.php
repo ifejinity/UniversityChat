@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../dist/output.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="shortcut icon" href="../src/resources/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
 <body class="bg-blue-50 md:h-screen h-full w-full overflow-x-hidden justify-center flex items-center font-outfit">
 
     <!-- loader -->
-    <div class="fixed bg-white/80 w-full h-screen flex justify-center items-center z-[1] flex-col gap-20" id="loader">
+    <div class="fixed bg-white/80 w-full h-screen hidden justify-center items-center z-[1] flex-col gap-20" id="loader">
         <div class="relative">
             <div class="loader">
                 <div class="dots"></div>
@@ -48,18 +49,18 @@
     </div>
 
     <!-- modal response failed-->
-    <div id="modalResponseFailed" class="fixed bg-black/30 w-full h-screen z-[10] justify-center items-center flex">
+    <div id="modalResponseFailed" class="fixed bg-black/30 w-full h-screen z-[10] justify-center items-center hidden">
         <div class="w-fit h-fit bg-white rounded-lg p-5 flex flex-col justify-center items-center gap-5 md:mx-[10%] mx-[5%]">
-            <div class="font-bold text-[25px]">Failed to create an Account.</div>
+            <div class="font-bold text-[25px] text-center">Failed to create an Account.</div>
             <button type="submit" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
                 ring-blue-300 focus:outline-none focus:ring w-fit" id="closeModalFailed">Okay</button>
         </div>
     </div>
 
     <!-- modal response success -->
-    <div id="modalResponseSuccess" class="fixed bg-black/30 w-full h-screen z-[10] justify-center items-center flex">
+    <div id="modalResponseSuccess" class="fixed bg-black/30 w-full h-screen z-[10] justify-center items-center hidden">
         <div class="w-fit h-fit bg-white rounded-lg p-5 flex flex-col justify-center items-center gap-5 md:mx-[10%] mx-[5%]">
-            <div class="font-bold text-[25px]">Successfully created an Account.</div>
+            <div class="font-bold text-[25px] text-center">Successfully created an Account.</div>
             <a href="../index.php" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
                 ring-blue-300 focus:outline-none focus:ring w-fit" id="closeModalSuccess">Sign in</a>
         </div>
