@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./dist/output.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="shortcut icon" href="./src/resources/logo.png" type="image/x-icon">
     <title>University Chat | Sign in</title>
 </head>
 <body class="bg-blue-50 h-screen w-full overflow-x-hidden justify-center flex items-center">
@@ -27,7 +28,7 @@
     </div>
 
     <header class="bg-white py-4 grid grid-cols-header drop-shadow-lg items-center px-[5%] md:px-[10%] fixed top-0 w-full">
-        <h1>Logo</h1>
+        <img class="w-[45px]" src="./src/resources/logo.png" alt="" srcset="">
         <div class="flex gap-4">
             <a href="./index.php" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
             ring-blue-300 focus:outline-none focus:ring">Sign In</a>

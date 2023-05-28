@@ -46,7 +46,7 @@
     </div>
 
     <header class="bg-white py-4 grid grid-cols-header drop-shadow-lg items-center px-[5%] md:px-[10%] fixed top-0 w-full">
-        <h1>Logo</h1>
+        <img class="w-[45px]" src="../src/resources/logo.png" alt="" srcset="">
         <div class="flex gap-4">
             <button class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
             ring-blue-300 focus:outline-none focus:ring" id="signout">Sign out</button>
