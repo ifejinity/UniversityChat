@@ -64,7 +64,7 @@
     <div id="modalSignout" class="fixed bg-black/30 w-full h-screen z-[10] justify-center items-center hidden">
         <div class="w-fit h-fit bg-white rounded-lg p-5 flex flex-col justify-center items-center gap-5 md:mx-[10%] mx-[5%]">
             <div>
-                <h1 class="text-[25px] font-bold">Are you sure?</h1>
+                <h1 class="text-[20px] font-bold">Are you sure?</h1>
             </div>
             <div class="flex flex-row gap-5">
                 <button type="submit" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80

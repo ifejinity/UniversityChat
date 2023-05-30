@@ -20,10 +20,36 @@
     <title>University Chat | Sign in</title>
 </head>
 <body class="bg-blue-50 h-screen w-full overflow-x-hidden justify-center flex items-center font-outfit">
+    <!-- loader -->
+    <div class="fixed bg-white/80 w-full h-screen hidden justify-center items-center z-[1] flex-col gap-20" id="loader">
+        <div class="relative">
+            <div class="loader">
+                <div class="dots"></div>
+            </div>
+            <div class="loader">
+                <div class="dot"></div>
+            </div>
+            <div class="loader">
+                <div class="dot"></div>
+            </div>
+            <div class="loader">
+                <div class="dot"></div>
+            </div>
+            <div class="loader">
+                <div class="dot"></div>
+            </div>
+            <div class="loader">
+                <div class="dot"></div>
+            </div>
+        </div>
+        <div>
+            <h1 class="text-[1rem]">Please wait</h1>
+        </div>
+    </div>
 
     <!-- modal response -->
     <div id="modalResponse" class="fixed bg-black/30 w-full h-screen z-[10] justify-center items-center hidden">
-        <div class="w-[500px] h-fit bg-white rounded-lg p-5 flex flex-col justify-center items-center gap-5 md:mx-[10%] mx-[5%]">
+        <div class="w-fit h-fit bg-white rounded-lg p-5 flex flex-col justify-center items-center gap-5 md:mx-[10%] mx-[5%]">
             <div id="response"></div>
             <button type="submit" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
                 ring-blue-300 focus:outline-none focus:ring w-fit" id="closeModal">Okay</button>
@@ -44,6 +70,7 @@
         <form class="flex flex-col gap-5 justify-center items-center" id="signinForm">
             <input class="p-3 outline-none rounded-lg bg-blue-50 w-full" type="number" name="studentno" id="studentno" placeholder="Student Number">
             <input class="p-3 outline-none rounded-lg bg-blue-50 w-full" type="password" name="password" id="password" placeholder="Password">
+            <a href="./pages/forgotpassword.php" class="text-blue-500">Forgot password?<a>
             <button type="submit" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
             ring-blue-300 focus:outline-none focus:ring w-[100px]" id="signin">Sign In</button>
         </form>

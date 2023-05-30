@@ -601,6 +601,14 @@ video {
   margin-top: 100px;
 }
 
+.mt-\[40px\] {
+  margin-top: 40px;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -621,6 +629,14 @@ video {
   display: none;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
@@ -634,6 +650,10 @@ video {
   height: 100vh;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .w-\[100px\] {
   width: 100px;
 }
@@ -642,8 +662,8 @@ video {
   width: 45px;
 }
 
-.w-\[500px\] {
-  width: 500px;
+.w-\[80px\] {
+  width: 80px;
 }
 
 .w-fit {
@@ -663,8 +683,16 @@ video {
   max-width: 500px;
 }
 
+.max-w-\[300px\] {
+  max-width: 300px;
+}
+
 .resize-none {
   resize: none;
+}
+
+.grid-cols-forgotpass {
+  grid-template-columns: repeat(5, auto);
 }
 
 .grid-cols-header {
@@ -707,6 +735,10 @@ video {
   gap: 1.5rem;
 }
 
+.gap-10 {
+  gap: 2.5rem;
+}
+
 .self-start {
   align-self: flex-start;
 }
@@ -739,6 +771,11 @@ video {
   background-color: rgb(0 0 0 / 0.3);
 }
 
+.bg-blue-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
 .bg-blue-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 246 255 / var(--tw-bg-opacity));
@@ -759,6 +796,11 @@ video {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -766,6 +808,11 @@ video {
 
 .bg-white\/80 {
   background-color: rgb(255 255 255 / 0.8);
+}
+
+.bg-blue-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
 }
 
 .p-3 {
@@ -792,6 +839,10 @@ video {
 
 .pt-\[100px\] {
   padding-top: 100px;
+}
+
+.pb-\[100px\] {
+  padding-bottom: 100px;
 }
 
 .text-center {
@@ -822,8 +873,24 @@ video {
   font-size: 30px;
 }
 
+.text-\[20px\] {
+  font-size: 20px;
+}
+
 .font-bold {
   font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
 }
 
 .text-blue-50 {
@@ -948,6 +1015,18 @@ video {
 
 .loader:nth-child(6) {
   animation-delay: 0.9s;
+}
+
+/* Hide the number input arrows */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .hover\:opacity-80:hover {

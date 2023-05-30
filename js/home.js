@@ -27,10 +27,13 @@ $(document).ready(()=> {
     // sign out
     $("#proceed").click((e)=>{
         e.preventDefault(); // Prevent the form from submitting normally
+        $("#modalSignout").hide();
+        $("#loader").css('display', 'flex');
 
         $.ajax({
             url: '../php/signout.php',
             success: function(response){
+                $("#loader").hide();
                 window.location.href = '../index.php';
             }
         });
