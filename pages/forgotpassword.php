@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>University Chat | Forgot Password</title>
 </head>
-<body class="bg-blue-50 md:h-screen h-full w-full overflow-x-hidden justify-center flex items-center flex-col font-outfit">
+<body class="bg-blue-50 h-full w-full overflow-x-hidden justify-center flex items-center flex-col font-outfit">
 
     <!-- loader -->
     <div class="fixed top-0 bg-white/80 w-full h-screen hidden justify-center items-center z-[1] flex-col gap-20" id="loader">
@@ -220,14 +220,13 @@
         // send code
         $("#sendcode").click(function(e){
             e.preventDefault();
-
+            $("#loader").css('display', 'flex');
             if($("#studentid").val() == ""){ 
                 $("#failedresponse").html("Student ID is required");
                 $("#modalResponseFailed").css('display', 'flex');
             }
 
             else{
-                $("#loader").css('display', 'flex');
                 var formData = $("#forgotpassword").serialize();
 
                 $.ajax({
