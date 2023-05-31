@@ -146,7 +146,7 @@
             </div>
         </div>
 
-        <div class="shadow-2xl bg-white p-5 flex flex-col rounded-lg gap-6 w-full max-w-[500px] mt-[40px] justify-center mb-5">
+        <div class="shadow-2xl bg-white p-5 flex flex-col rounded-lg gap-6 w-full max-w-[500px] justify-center mb-5">
             <h1 class="text-[25px] font-bold">Change Password</h1>
             <form class="flex flex-col gap-5" id="changepassword">
                 <input class="p-3 outline-none rounded-lg bg-blue-50 w-full" type="text" name="pass" id="pass" placeholder="New Password">
@@ -164,8 +164,8 @@
         </div>
     </div>
 
-    <div id="form3" class="flex flex-col justify-center items-center w-full md:px-[10%] px-[5%]">
-    <div class="grid grid-cols-forgotpass justify-center items-center mt-[100px]" id="progress">
+    <div id="form3" class="flex flex-col justify-center items-center w-full md:px-[10%] px-[5%] gap-10">
+        <div class="grid grid-cols-forgotpass justify-center items-center mt-[100px]" id="progress">
             <div class="bg-blue-400 h-10 w-10 rounded-full flex justify-center items-center">
                 <p class="text-white font-medium">1</p>
             </div>
@@ -187,7 +187,7 @@
             </div>
         </div>
 
-        <div class="shadow-2xl bg-white p-5 flex flex-col rounded-lg gap-6 w-full max-w-[500px] mt-[40px] justify-center mb-5">
+        <div class="shadow-2xl bg-white p-5 flex flex-col rounded-lg gap-6 w-full max-w-[500px] justify-center mb-5">
             <h1 class="text-[25px] font-bold text-center">Your password has been changed successfully.</h1>
             <p>Please remember to keep your new password secure and confidential. If you have any further questions or need assistance with anything else, reach me on <a href="mailto: mrlonzanida08@gmail.com" class="text-blue-500">mrlonzanida08@gmail.com</a>.</p>
             <a href="../index.php" type="submit" class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80 ring-blue-300 focus:outline-none focus:ring w-fit self-center" id="done">Sign in</a>
