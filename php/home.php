@@ -24,8 +24,10 @@
                 echo "
                     <div class='flex flex-col w-full' id='messageItem'>
                         <h1 class='self-end text-[.9rem] text-gray-400'>$fname</h1>
-                        <div class='self-end w-fit bg-blue-500 p-3 text-white rounded-full'>
-                            <h1>$message</h1>
+                        <div class='chat chat-end'>
+                            <div class='chat-bubble bg-blue-500'>
+                                <h1 class='text-white'>$message</h1>
+                            </div>
                         </div>
                         <h1 class='self-end text-[.7rem] text-gray-400'>$datetime</h1>
                     </div>
@@ -34,9 +36,11 @@
                 echo "
                     <div class='flex flex-col w-full' id='messageItem'>
                         <h1 class='self-start text-[.9rem] text-gray-400'>$fname</h1>
-                        <div class='self-start w-fit bg-gray-300 p-3 rounded-full'>
-                            <h1>$message</h1>
-                        </div>
+                        <div class='chat chat-start'>
+                            <div class='chat-bubble bg-gray-200'>
+                                <h1 class='text-black'>$message</h1>
+                            </div>
+                         </div>
                         <h1 class='self-start text-[.7rem] text-gray-400'>$datetime</h1>
                     </div>
                 ";

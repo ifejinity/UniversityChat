@@ -30,6 +30,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
     <title>University Chat</title>
 </head>
 <body class="bg-blue-50 h-screen w-full overflow-x-hidden justify-center flex items-center font-outfit">
@@ -75,7 +76,7 @@
         </div>
     </div>
 
-    <header class="bg-white py-4 grid grid-cols-header drop-shadow-lg items-center px-[5%] md:px-[10%] fixed top-0 w-full">
+    <header class="bg-white py-4 grid grid-cols-header drop-shadow-lg items-center px-[5%] md:px-[10%] fixed top-0 w-full z-[1]">
         <img class="w-[45px]" src="../src/resources/logo.png" alt="" srcset="">
         <div class="flex gap-4">
             <button class="bg-blue-500 p-3 rounded-lg text-blue-50 hover:opacity-80
@@ -92,21 +93,25 @@
             ?>
                         <div class="flex flex-col w-full" id="messageItem">
                             <h1 class="self-end text-[.9rem] text-gray-400"><?php echo $rowmessages["fullname"];?></h1>
-                            <div class="self-end w-fit bg-blue-500 p-3 text-white rounded-full">
-                                <h1><?php echo $rowmessages["message"] ?></h1>
+                            <div class="chat chat-end">
+                                <div class="chat-bubble">
+                                    <h1><?php echo $rowmessages["message"] ?></h1>
+                                </div>
                             </div>
-                            <h1 class="self-end text-[.7rem] text-gray-400"><?php echo $rowmessages["datetime"];?></h1>
+                            <h1 class="self-end text-[.7rem] text-gray-400" id="msgdate"><?php echo $rowmessages["datetime"];?></h1>
                         </div>
             <?php
                     }
                     else{
-            ?>
+            ?>          
                         <div class="flex flex-col w-full" id="messageItem">
                             <h1 class="self-start text-[.9rem] text-gray-400"><?php echo $rowmessages["fullname"];?></h1>
-                            <div class="self-start w-fit bg-gray-300 p-3 rounded-full">
-                                <h1><?php echo $rowmessages["message"]?></h1>
+                            <div class="chat chat-start">
+                                <div class="chat-bubble bg-gray-200">
+                                    <h1 class="text-black"><?php echo $rowmessages["message"]?></h1>
+                                </div>
                             </div>
-                            <h1 class="self-start text-[.7rem] text-gray-400"><?php echo $rowmessages["datetime"];?></h1>
+                            <h1 class="self-start text-[.7rem] text-gray-400" id="msgdate"><?php echo $rowmessages["datetime"];?></h1>
                         </div>
             <?php
                     }
@@ -137,6 +142,7 @@
         <input type="hidden" name="myLoaded" value="10" id="limitdata">
     </form>
 
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/home.js"></script>
 </body>
 </html>
