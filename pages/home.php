@@ -94,8 +94,8 @@
                         <div class="flex flex-col w-full" id="messageItem">
                             <h1 class="self-end text-[.9rem] text-gray-400"><?php echo $rowmessages["fullname"];?></h1>
                             <div class="chat chat-end">
-                                <div class="chat-bubble">
-                                    <h1><?php echo $rowmessages["message"] ?></h1>
+                                <div class="chat-bubble bg-blue-500">
+                                    <h1 class="text-white"><?php echo $rowmessages["message"] ?></h1>
                                 </div>
                             </div>
                             <h1 class="self-end text-[.7rem] text-gray-400" id="msgdate"><?php echo $rowmessages["datetime"];?></h1>
